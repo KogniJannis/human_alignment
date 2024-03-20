@@ -18,7 +18,7 @@ DATASETS = [
 ]
 
 
-def load_dataset(name: str, data_dir: str, category=None, stimulus_set=None, transform=None):
+def load_dataset(name: str, data_dir: str, category=None, stimulus_set=None, download=True, transform=None):
     if name == "cifar100-coarse":
         dataset = CIFAR100CoarseTriplet(
             triplet_path=os.path.join(data_dir, "cifar100_coarse_triplets.npy"),
@@ -29,11 +29,11 @@ def load_dataset(name: str, data_dir: str, category=None, stimulus_set=None, tra
         )
     elif name == "things":
         dataset = THINGSBehavior(
-            root=data_dir, aligned=False, download=True, transform=transform
+            root=data_dir, aligned=False, download=download, transform=transform
         )
     elif name == "things-aligned":
         dataset = THINGSBehavior(
-            root=data_dir, aligned=True, download=True, transform=transform
+            root=data_dir, aligned=True, download=download, transform=transform
         )
     elif name == "multi-arrangement":
         dataset = MultiArrangement(root=data_dir, transform=transform)
