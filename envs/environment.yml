@@ -12,11 +12,10 @@ dependencies:
  - tqdm=4.64.*
  - pytorch=1.13.*
  - torchvision=0.14.1
- - Pillow=9.1.* 
+ - Pillow=9.0.* 
  - pip
  - pip:
    - thingsvision==2.3.14
-   - functorch==0.2.*
    - pytorch_lightning==1.9.*
    - einops 
    - tueplots 
